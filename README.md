@@ -16,9 +16,9 @@ Outros requisitos
 
 Entrega do dia: 17/06/2024
 
-[ ] Implementação com RPC
+[x] Implementação com RPC
 
-[ ] Inserção e consulta em todos os dados
+[x] Inserção e consulta em todos os dados
 
-[ ] Implementação de load balancer dos nós do cluster
+[x] Implementação de load balancer dos nós do cluster
 

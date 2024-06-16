@@ -21,7 +21,7 @@ class NaiveDBService(rpyc.Service):
     def exposed_search_expression(self, expression: str):
         logging.info("search_expression from ")
         '''Search a substring and return a list with the first 100 occurrences and total occurrences'''
-        MAX_ITEMS = 100
+        MAX_ITEMS = 10
         results = list()
         count = 0
         expression = expression.upper()
@@ -56,3 +56,7 @@ class NaiveDBService(rpyc.Service):
         gz_files = [file for file in os.listdir() if file.endswith('.gz')]
         for gz_file in gz_files:
             os.system('gzip -d ' + gz_file)
+    
+    def exposed_upload_file(self, file_name, file_data):
+        with open(file_name, 'ab') as f:
+            f.write(file_data)

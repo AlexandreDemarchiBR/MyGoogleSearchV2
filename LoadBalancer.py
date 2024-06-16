@@ -10,6 +10,7 @@ class LoadBalancerService(rpyc.Service):
         # List comprehension que cria uma lista de dicionarios contendo as chaves 'host' e 'port' de hosts cujo ALIAS começa com "NAIVE"
         services_list = [{'host': rpyc.discover(i)[0][0], 'port': rpyc.discover(i)[0][1]} for i in services if i.startswith('NAIVE')]
         self.server_queue = cycle(services_list)
+        print('Fila inicializada', services_list)
 
     def on_connect(self, conn):
         pass
@@ -20,4 +21,6 @@ class LoadBalancerService(rpyc.Service):
 
     # retorna DICIONARIO no formato {'host': ip, 'port': porta} ciclando entre os nós
     def exposed_get_server(self): # this is an exposed method
-        return next(self.server_queue)
+        ip_port = next(self.server_queue)
+        print('Respondendo', ip_port)
+        return ip_port

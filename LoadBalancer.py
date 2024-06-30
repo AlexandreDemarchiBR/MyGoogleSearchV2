@@ -20,7 +20,12 @@ class LoadBalancerService(rpyc.Service):
         pass
 
     # retorna DICIONARIO no formato {'host': ip, 'port': porta} ciclando entre os nós
-    def exposed_get_server(self): # this is an exposed method
+    def exposed_get_server_for_search(self): # this is an exposed method
         ip_port = next(self.server_queue)
         print('Respondendo', ip_port)
         return ip_port
+
+    # retornar lista de dicionarios contendo nós para inserção
+    # formato do dicionario {'host': ip, 'port': porta}
+    def exposed_get_server_for_insertion(self):
+        pass

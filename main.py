@@ -4,7 +4,7 @@ import rpyc
 
 if __name__ == "__main__":
     client = Client()
-    #client.upload_file("random.jsonl")
+    client.upload_file("2016_pt.jsonl")
     #client.search_expression("Programação")
 
     '''

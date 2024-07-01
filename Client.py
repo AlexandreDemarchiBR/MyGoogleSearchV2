@@ -3,9 +3,9 @@ import os
 
 class Client():
     def __init__(self):
-        IP, PORT = rpyc.discover("MAIN")[0]
+        IP, PORT = rpyc.discover("MAINSERVICE")[0] #('192.168.100.2', 18861) 
         self.disp_conn = rpyc.connect(IP, PORT)
-        print("MAIN: IP {IP}, PORT {PORT}")
+        print(f"MAIN: IP {IP}, PORT {PORT}")
 
     # Faz upload de arquivo, dividindo em chunks
     def upload_file(self, file_path, chunk_size=1024*1024):

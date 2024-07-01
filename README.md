@@ -14,11 +14,19 @@ Outros requisitos
 3. Serviço de monitoramento
 4. Serviço de tolerância a falhas
 
-Entrega do dia: 17/06/2024
 
-[x] Implementação com RPC
+- [x] Implementação com RPC
 
-[x] Inserção e consulta em todos os dados
+- [ ] Inserção
 
-[x] Implementação de load balancer dos nós do cluster
+- [ ] Remoção
 
+- [ ] Consulta em todos os dados
+
+- [ ] Listagem de todas as bases de dados
+
+- [ ] Implementação de load balancer dos nós do cluster
+
+- [ ] Implementação de logs
+
+- [ ] Avaliação de desempenho

@@ -1,4 +1,4 @@
-from NaiveDB import NaiveDBService
+from NaiveDBService import NaiveDBService
 
 PORT = 18862
 

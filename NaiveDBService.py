@@ -18,7 +18,7 @@ class NaiveDBService(rpyc.Service):
         # (to finalize the service, if needed)
         pass
     
-    def exposed_search_expression(self, expression: str):
+    """def exposed_search_expression(self, expression: str):
         logging.info("search_expression from ")
         '''Search a substring and return a list with the first 100 occurrences and total occurrences'''
         MAX_ITEMS = 10
@@ -48,15 +48,15 @@ class NaiveDBService(rpyc.Service):
             description = item['description'] if isinstance(item['description'], str) else 'SEM DESCRIÇÃO'
             url = item['url'] if isinstance(item['url'], str) else 'SEM LINK'
             message += 'Título: ' + title + '\n' + 'Descrição: ' + description + '\n' + 'URL: ' + url + '\n\n'
-        return message
+        return message"""
     
     
-    def extract_from_gz():
+    """def extract_from_gz():
         '''Extract the downloaded .gz files. gzip must be installed'''
         gz_files = [file for file in os.listdir() if file.endswith('.gz')]
         for gz_file in gz_files:
-            os.system('gzip -d ' + gz_file)
+            os.system('gzip -d ' + gz_file)"""
     
-    def exposed_upload_file(self, file_name, file_data):
+    def exposed_persist_file(self, file_name, chunk):
         with open(file_name, 'ab') as f:
-            f.write(file_data)
+            f.write(chunk)

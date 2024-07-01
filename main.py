@@ -1,11 +1,13 @@
+# arquivo que usará a classe cliente
 from Client import Client
-
-client = Client()
-client.search_expression("Programação")
-
-'''
 import rpyc
 
-IP, PORT = rpyc.discover("NAIVEDB")[0]
-conn = rpyc.connect(IP, PORT)
-print(conn.root.search_expression("Confira"))'''
+if __name__ == "__main__":
+    client = Client()
+    #client.upload_file("random.jsonl")
+    #client.search_expression("Programação")
+
+    '''
+    IP, PORT = rpyc.discover("NAIVEDB")[0]
+    conn = rpyc.connect(IP, PORT)
+    print(conn.root.search_expression("Confira"))'''

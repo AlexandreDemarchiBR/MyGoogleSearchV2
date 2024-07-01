@@ -1,4 +1,4 @@
-from LoadBalancer import LoadBalancerService
+from LoadBalancerService import LoadBalancerService
 
 PORT = 18812
 

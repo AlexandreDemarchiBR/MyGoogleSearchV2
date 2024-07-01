@@ -3,7 +3,12 @@ import os
 
 class Client():
     def __init__(self):
-        IP, PORT = rpyc.discover("MAINSERVICE")[0] #('192.168.100.2', 18861) 
+        # ip maquina virtual 'alpha'
+        IP, PORT = ('192.168.100.2', 18861)
+        # usando registry: só funciona na mesma rede
+        #IP, PORT = rpyc.discover("MAINSERVICE")[0]
+        # na mesma maquina
+        #IP, PORT = ('localhost', 18861)
         self.disp_conn = rpyc.connect(IP, PORT)
         print(f"MAIN: IP {IP}, PORT {PORT}")
 

@@ -13,7 +13,7 @@ class MainService(rpyc.Service):
     def exposed_forward_upload_file(self, file_name, chunk):
         self.write_conn.root.spread_upload_file(file_name, chunk)
     
-    def exposed_forward_search_expression(self, file_name, expression):
+    def exposed_search_file(self, file_name, expression):
         self.read_conn.root.spread_upload_file(file_name, expression)
 
 

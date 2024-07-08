@@ -5,7 +5,7 @@ import rpyc
 if __name__ == "__main__":
     client = Client()
     client.upload_file("2016_pt.jsonl")
-    #client.search_expression("Programação")
+    #client.search_expression("2016_pt.jsonl", "Programação")
 
     '''
     IP, PORT = rpyc.discover("NAIVEDB")[0]

@@ -16,4 +16,4 @@ class Client():
 
 
     def search_expression(self, file_name, expression):
-        return self.conn.forward_search_expression(file_name, expression)
+        return self.conn.root.forward_search_expression(file_name, expression)

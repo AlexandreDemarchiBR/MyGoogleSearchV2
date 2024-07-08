@@ -3,7 +3,8 @@ import os
 
 class Client():
     def __init__(self):
-        self.conn = rpyc.connect(rpyc.discover("MAINSERVICE")[0])
+        IP, PORT = rpyc.discover("MAINSERVICE")[0]
+        self.conn = rpyc.connect(IP, PORT)
 
 
     # Faz upload de arquivo, dividindo em chunks
@@ -11,7 +12,7 @@ class Client():
         file_name = os.path.basename(file_path)
         with open(file_path, 'rb') as f:
             while chunk := f.read(chunk_size):
-                self.disp_conn.root.forward_upload_file(file_name, chunk)
+                self.conn.root.forward_upload_file(file_name, chunk)
 
 
     def search_expression(self, file_name, expression):

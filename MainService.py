@@ -4,8 +4,10 @@ class MainService(rpyc.Service):
     ALIASES = ['MAINSERVICE']
 
     def __init__(self):
-        self.write_conn = rpyc.connect(rpyc.discover('WRITESERVICE')[0])
-        self.read_conn = rpyc.connect(rpyc.discover('READSERVICE')[0])
+        IP, PORT = rpyc.discover('WRITESERVICE')[0]
+        self.write_conn = rpyc.connect(IP, PORT)
+        IP, PORT = rpyc.discover('READSERVICE')[0]
+        self.read_conn = rpyc.connect(IP, PORT)
 
     # encaminha arquivo para o servidor de escrita
     def exposed_forward_upload_file(self, file_name, chunk):

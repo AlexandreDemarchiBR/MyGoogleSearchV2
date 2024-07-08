@@ -32,7 +32,7 @@ class NaiveDBService(rpyc.Service):
                     if count < MAX_ITEMS:
                         results.append(line)
                     count += 1
-            fd.close()
+        fd.close()
         message = 'Total de resultados: ' + str(count) + '\n\n'
         for item in results:
             title = item['title'] if isinstance(item['title'], str) else 'SEM TITULO'

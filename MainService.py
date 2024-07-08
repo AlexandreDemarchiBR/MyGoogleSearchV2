@@ -14,7 +14,7 @@ class MainService(rpyc.Service):
         self.write_conn.root.spread_upload_file(file_name, chunk)
     
     def exposed_forward_search_expression(self, file_name, expression):
-        self.read_conn.root.search_file(file_name, expression)
+        return self.read_conn.root.search_file(file_name, expression)
 
 
 

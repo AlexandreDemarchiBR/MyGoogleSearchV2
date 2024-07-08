@@ -12,7 +12,7 @@ class NaiveDBService(rpyc.Service):
         pass
     
     def exposed_search_file(self, file_name, expression):
-        #logging.info("search_expression from ")
+        print("search_expression")
         '''Search a substring and return a list with the first 100 occurrences and total occurrences'''
         MAX_ITEMS = 10 #limite de resultados
         results = list()
